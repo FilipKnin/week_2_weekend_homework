@@ -13,4 +13,8 @@ class Room
   def add_song(song)
     @songs.push(song)
   end
+
+  def add_guest(guest)
+    @guests.push(guest)
+  end
 end
