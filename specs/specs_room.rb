@@ -26,4 +26,8 @@ class RoomTest < MiniTest::Test
     assert_equal(@bar, @room1.bar)
   end
 
+  def test_room_has_songs_playlist
+    assert_equal([], @room1.songs)
+  end
+
 end
