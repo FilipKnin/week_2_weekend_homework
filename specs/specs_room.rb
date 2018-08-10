@@ -13,6 +13,8 @@ class RoomTest < MiniTest::Test
     @song2 = Song.new("Wild horses")
     @guest1 = Guest.new("Filip", 250)
     @guest2 = Guest.new("Michael", 300)
+    @guest3 = Guest.new("John", 350)
+    @guest4 = Guest.new("Danny", 400)
     @drink1 = Drink.new("Mojito", 10)
     @drink2 = Drink.new("Gin", 15)
     @drink3 = Drink.new("Whiskey", 20)
@@ -56,5 +58,11 @@ class RoomTest < MiniTest::Test
     @room1.add_guest(@guest1)
     assert_equal([@guest2, @guest1], @room1.guests)
   end
+
+  def test_check_space_in_room__true
+    @room1.check_space()
+    assert_equal(true, @room1.check_space())
+  end
+
 
 end

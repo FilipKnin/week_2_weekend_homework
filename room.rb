@@ -17,4 +17,12 @@ class Room
   def add_guest(guest)
     @guests.push(guest)
   end
+
+  def check_space()
+    if @guests.length < capacity
+      return true
+    else
+      return false
+    end
+  end
 end
