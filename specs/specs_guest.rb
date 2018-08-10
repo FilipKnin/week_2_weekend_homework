@@ -18,4 +18,8 @@ def test_guest_has_money
   assert_equal(250, @guest1.wallet)
 end
 
+def test_guest_has_total_spending__initial_value
+  assert_equal(0, @guest1.total_spending)
+end
+
 end
