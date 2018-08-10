@@ -15,4 +15,9 @@ class BarTest < MiniTest::Test
   def test_bar_has_drinks
     assert_equal([@drink1, @drink2, @drink3], @bar.drinks)
   end
+
+  def test_bar_has_income__initial_value_0
+    assert_equal(0, @bar.income)
+  end
+
 end
