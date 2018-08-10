@@ -1,0 +1,2 @@
+class Ccc
+end
