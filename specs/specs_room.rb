@@ -3,10 +3,12 @@ require('minitest/rg')
 require_relative('../room.rb')
 require_relative('../bar.rb')
 require_relative('../drink.rb')
+require_relative('../song.rb')
 
 class RoomTest < MiniTest::Test
 
   def setup
+    @song1 = Song.new("Angie")
     @drink1 = Drink.new("Mojito", 10)
     @drink2 = Drink.new("Gin", 15)
     @drink3 = Drink.new("Whiskey", 20)
@@ -34,4 +36,8 @@ class RoomTest < MiniTest::Test
     assert_equal([], @room1.guests)
   end
 
+  def test_add_song
+    @room1.add_song(@song1)
+    assert_equal([@song1], @room1.songs)
+  end
 end
