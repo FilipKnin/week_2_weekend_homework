@@ -13,4 +13,9 @@ end
 def test_guest_has_name
   assert_equal("Filip", @guest1.name)
 end
+
+def test_guest_has_money
+  assert_equal(250, @guest1.wallet)
+end
+
 end
