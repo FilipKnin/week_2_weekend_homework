@@ -63,6 +63,28 @@ class RoomTest < MiniTest::Test
     @room1.check_space()
     assert_equal(true, @room1.check_space())
   end
+  def test_check_space_in_room__true_2_guests
+    @room1.add_guest(@guest1)
+    @room1.add_guest(@guest2)
+    @room1.check_space()
+    assert_equal(true, @room1.check_space())
+  end
 
+  def test_check_space_in_room__false_4_guests
+    @room1.add_guest(@guest1)
+    @room1.add_guest(@guest2)
+    @room1.add_guest(@guest3)
+    @room1.add_guest(@guest4)
+    @room1.check_space()
+    assert_equal(false, @room1.check_space())
+  end
+
+  def test_check_space_in_room__false_3_guests
+    @room1.add_guest(@guest1)
+    @room1.add_guest(@guest2)
+    @room1.add_guest(@guest3)
+    @room1.check_space()
+    assert_equal(false, @room1.check_space())
+  end
 
 end
