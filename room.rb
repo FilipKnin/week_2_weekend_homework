@@ -25,4 +25,10 @@ class Room
       return false
     end
   end
+
+  def remove_guest(guest)
+    @guests.delete_if {|x| x == guest}
+  end
+
+
 end
