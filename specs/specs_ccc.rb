@@ -33,8 +33,9 @@ class CccTest < MiniTest::Test
   end
 
 def test_take_fee
-  @Ccc.take_fee()
+  @Ccc.take_fee(@guest1, @Ccc)
   assert_equal(15, @Ccc.income)
+  assert_equal(235, @guest1.wallet)
 end
 
 end
