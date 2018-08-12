@@ -73,4 +73,11 @@ class CccTest < MiniTest::Test
     @Ccc.check_in(@guest6, @room1, @Ccc)
     assert_equal("Sorry, we don't have enough space", @Ccc.check_in(@guest6, @room1, @Ccc))
   end
+
+  def test_check_out
+    @room1.add_guest(@guest1)
+    @room1.add_guest(@guest3)
+    @Ccc.check_out(@guest1, @room1)
+    assert_equal([@guest3], @room1.guests)
+  end
 end

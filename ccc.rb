@@ -25,4 +25,9 @@ class Ccc
     else p "Sorry, we don't have enough space"
     end
   end
+
+  def check_out(guest, room)
+    room.remove_guest(guest)
+  end
+
 end
