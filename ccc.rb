@@ -14,4 +14,8 @@ class Ccc
     @income += @fee
      guest.pay_fee(caraoke_venue) #how to make two methods corresponding
   end
+
+  def check_in(guest, room)
+    room.guests.push(guest)
+  end
 end

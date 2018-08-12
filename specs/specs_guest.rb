@@ -41,4 +41,5 @@ class GuestTest < MiniTest::Test
     @guest2.has_enough_money(@Ccc)
     assert_equal(false, @guest2.has_enough_money(@Ccc))
   end
+  
 end

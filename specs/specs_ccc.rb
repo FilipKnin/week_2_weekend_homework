@@ -32,10 +32,15 @@ class CccTest < MiniTest::Test
     assert_equal(0, @Ccc.total_income)
   end
 
-def test_take_fee
-  @Ccc.take_fee(@guest1, @Ccc)
-  assert_equal(15, @Ccc.income)
-  assert_equal(235, @guest1.wallet)
-end
+  def test_take_fee
+    @Ccc.take_fee(@guest1, @Ccc)
+    assert_equal(15, @Ccc.income)
+    assert_equal(235, @guest1.wallet)
+  end
+
+  def test_check_in
+    @Ccc.check_in(@guest1, @room1)
+    assert_equal([@guest1], @room1.guests)
+  end
 
 end
