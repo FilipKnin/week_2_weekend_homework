@@ -19,10 +19,10 @@ class Ccc
     if room.check_space == true && guest.has_enough_money(caraoke_venue)
       room.guests.push(guest)
       take_fee(guest, caraoke_venue)
-      return "Please, go to #{room.name}!"
-    elsif room.check_space == true && guest.has_enough_money(caraoke_venue) == false
-      return "Sorry, you have no enough money"
-
+      p "Please, go to #{room.name}!"
+    elsif (room.check_space == true && guest.has_enough_money(caraoke_venue) == false) || (room.check_space == false && guest.has_enough_money(caraoke_venue) == false)
+      p "Sorry, you have no enough money"
+    else p "Sorry, we don't have enough space"
     end
   end
 end
