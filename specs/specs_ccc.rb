@@ -13,6 +13,7 @@ class CccTest < MiniTest::Test
     @room1 = Room.new("Rock'n Roll room", 3, @bar )
     @Ccc = Ccc.new(15, @room1)
     @guest1 = Guest.new("Filip", 250)
+    @guest2 = Guest.new("Michael", 0)
   end
 
 
@@ -38,9 +39,19 @@ class CccTest < MiniTest::Test
     assert_equal(235, @guest1.wallet)
   end
 
-  def test_check_in
-    @Ccc.check_in(@guest1, @room1)
+  def test_check_in_guest_checked_in
+    @Ccc.check_in(@guest1, @room1, @Ccc)
     assert_equal([@guest1], @room1.guests)
+    assert_equal(15, @Ccc.income)
+    assert_equal(235, @guest1.wallet)
+    assert_equal("Please, go to Rock'n Roll room!", @Ccc.check_in(@guest1, @room1, @Ccc))
   end
 
+  def test_check_in_guest_not_checked_in_no_enough_money
+    @Ccc.check_in(@guest2, @room1, @Ccc)
+    assert_equal([], @room1.guests)
+    assert_equal(0, @Ccc.income)
+    assert_equal(0, @guest2.wallet)
+    assert_equal("Sorry, you have no enough money", @Ccc.check_in(@guest2, @room1, @Ccc))
+  end
 end
