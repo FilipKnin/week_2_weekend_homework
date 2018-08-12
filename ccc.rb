@@ -1,6 +1,7 @@
 class Ccc
 
   attr_reader(:fee, :rooms, :income, :total_income)
+  attr_reader(:income)
 
   def initialize(fee, rooms)
     @fee = fee

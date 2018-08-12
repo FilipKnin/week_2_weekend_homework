@@ -26,9 +26,11 @@ class CccTest < MiniTest::Test
   def test_Ccc_has_income__initial_value_0
     assert_equal(0, @Ccc.income)
   end
-  
+
   def test_Ccc_has_total_income__initial_value_0
     assert_equal(0, @Ccc.total_income)
   end
+
+
 
 end
