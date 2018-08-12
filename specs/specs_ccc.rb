@@ -12,6 +12,7 @@ class CccTest < MiniTest::Test
   def setup
     @room1 = Room.new("Rock'n Roll room", 3, @bar )
     @Ccc = Ccc.new(15, @room1)
+    @guest1 = Guest.new("Filip", 250)
   end
 
 
@@ -31,6 +32,9 @@ class CccTest < MiniTest::Test
     assert_equal(0, @Ccc.total_income)
   end
 
-
+def test_take_fee
+  @Ccc.take_fee()
+  assert_equal(15, @Ccc.income)
+end
 
 end
