@@ -1,6 +1,7 @@
 class Guest
 
 attr_reader(:name,:wallet, :total_spending)
+attr_writer(:wallet)
 
   def initialize(name, wallet)
     @name = name
@@ -10,6 +11,15 @@ attr_reader(:name,:wallet, :total_spending)
 
   def pay_fee(caraoke_venue)
     @wallet -= caraoke_venue.fee
-    caraoke_venue.income += caraoke_venue.fee #why this does not work?
+    #caraoke_venue.income += caraoke_venue.fee #is that ok?
   end
+
+  def has_enough_money(caraoke_venue)
+    if caraoke_venue.fee <= @wallet
+      return true
+    else
+      return false
+    end
+  end
+
 end

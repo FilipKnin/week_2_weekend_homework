@@ -10,7 +10,8 @@ class Ccc
     @total_income = 0 #is that ok? @total_income = @income
   end
 
-  def take_fee()
+  def take_fee(guest, caraoke_venue)
     @income += @fee
+     guest.pay_fee(caraoke_venue) #how to make two methods corresponding
   end
 end

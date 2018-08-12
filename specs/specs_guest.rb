@@ -31,4 +31,8 @@ class GuestTest < MiniTest::Test
     # assert_equal(15, @Ccc.income) #??
   end
 
+  def test_if_guest_have_enough_money__true
+    @guest1.has_enough_money(@Ccc)
+    assert_equal(true, @guest1.has_enough_money(@Ccc))
+  end
 end
