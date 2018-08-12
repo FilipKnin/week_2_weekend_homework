@@ -9,6 +9,7 @@ class GuestTest < MiniTest::Test
 
   def setup
     @guest1 = Guest.new("Filip", 250)
+    @guest2 = Guest.new("Michael", 0)
     @Ccc = Ccc.new(15, @room1)
   end
 
@@ -34,5 +35,10 @@ class GuestTest < MiniTest::Test
   def test_if_guest_have_enough_money__true
     @guest1.has_enough_money(@Ccc)
     assert_equal(true, @guest1.has_enough_money(@Ccc))
+  end
+
+  def test_if_guest_have_enough_money__false
+    @guest2.has_enough_money(@Ccc)
+    assert_equal(false, @guest2.has_enough_money(@Ccc))
   end
 end
