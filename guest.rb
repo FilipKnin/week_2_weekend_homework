@@ -7,6 +7,7 @@ attr_writer(:wallet)
     @name = name
     @wallet = wallet
     @total_spending = 0
+    @favourite_song = []
   end
 
   def pay_fee(caraoke_venue)
@@ -21,5 +22,13 @@ attr_writer(:wallet)
       return false
     end
   end
+
+#   def fav_song(room, song)
+#     for song in room.songs
+#       if song == @favourite_song
+#         return "Whoo!"
+#     end
+# end
+#   end
 
 end

@@ -3,6 +3,8 @@ require('minitest/rg')
 require_relative('../guest.rb')
 require_relative('../ccc.rb')
 require_relative('../room.rb')
+require_relative('../song.rb')
+require_relative('../bar.rb')
 
 class GuestTest < MiniTest::Test
 
@@ -11,6 +13,8 @@ class GuestTest < MiniTest::Test
     @guest1 = Guest.new("Filip", 250)
     @guest2 = Guest.new("Michael", 0)
     @Ccc = Ccc.new(15, @room1)
+    @song1 = Song.new("Angie")
+    @room1 = Room.new("Rock'n Roll room", 3, @bar)
   end
 
 
@@ -41,5 +45,11 @@ class GuestTest < MiniTest::Test
     @guest2.has_enough_money(@Ccc)
     assert_equal(false, @guest2.has_enough_money(@Ccc))
   end
-  
+
+  # def test_favourite_song_on_playlist
+  #   @room1.add_song(@song1)
+  #   @guest1.favourite_song.push(@song1)
+  #   @guest1.fav_song(@room1, @song1)
+  #   assert_equal("Whoo!", @guest1.fav_song(@room1, @song1))
+  # end
 end
